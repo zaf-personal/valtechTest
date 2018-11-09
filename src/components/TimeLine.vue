@@ -168,7 +168,10 @@ export default {
           enabled: false
         },
         grid: {
-          borderColor: "#fff"
+          borderColor: "#fff",
+          padding: {
+            bottom: 1
+          }
         }
       },
       chartOptions2: {
@@ -207,7 +210,10 @@ export default {
           enabled: false
         },
         grid: {
-          borderColor: "#fff"
+          borderColor: "#fff",
+          padding: {
+            bottom: 1
+          }
         }
       },
       chartOptions3: {
@@ -246,7 +252,10 @@ export default {
           enabled: false
         },
         grid: {
-          borderColor: "#fff"
+          borderColor: "#fff",
+          padding: {
+            bottom: 1
+          }
         }
       },
       series: [
@@ -418,6 +427,9 @@ h3 {
   }
   .tabs-details {
     margin: -10px 0 10px -7px;
+  }
+  .apexcharts-grid {
+    display: none;
   }
 }
 //Animate Tab Content
