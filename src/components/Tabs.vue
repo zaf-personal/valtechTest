@@ -155,6 +155,11 @@ export default {
       this.getWindowWidth();
     });
   },
+  computed: {
+    href() {
+      return "#" + this.name.toLowerCase().replace(/ /g, "-");
+    }
+  },
   methods: {
     getWindowWidth() {
       this.windowWidth = document.documentElement.clientWidth;

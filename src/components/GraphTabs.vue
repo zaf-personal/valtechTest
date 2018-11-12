@@ -11,13 +11,13 @@
       <div class=y-legend>$B</div>
       <div class=x-legend>Year</div>
       <div v-show="activetab === 'lorem'" class="chart-wrapper">
-        <apexcharts width="250" type="bar" :options="chartOptions1" :series="series1"></apexcharts>
+        <apexcharts width="230" height="200" type="bar" :options="chartOptions1" :series="series1"></apexcharts>
       </div>
       <div v-show="activetab === 'ipsum'" class="chart-wrapper">
-        <apexcharts width="250" type="bar" :options="chartOptions2" :series="series2"></apexcharts>
+        <apexcharts width="230" height="200" type="bar" :options="chartOptions2" :series="series2"></apexcharts>
       </div>
       <div v-show="activetab === 'amet'" class="chart-wrapper">
-        <apexcharts width="250" type="bar" :options="chartOptions3" :series="series3"></apexcharts>
+        <apexcharts width="230" height="200" type="bar" :options="chartOptions3" :series="series3"></apexcharts>
       </div>
     </div>
   </div>
@@ -32,7 +32,7 @@ export default {
   },
   data() {
     return {
-      activetab: "lorem",
+      activetab: "",
       chartOptions1: {
         chart: {
           id: "basic-bar",
@@ -179,13 +179,8 @@ export default {
       ]
     };
   },
-  computed: {
-    href() {
-      return "#" + this.name.toLowerCase().replace(/ /g, "-");
-    }
-  },
   mounted() {
-    this.isActive = this.selected;
+    this.activetab = "lorem";
   }
 };
 </script>
@@ -193,7 +188,6 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 .graph-tabs {
-  margin-top: -7px;
   ul {
     list-style-type: none;
     display: flex;
@@ -245,10 +239,9 @@ export default {
   }
 }
 .graphs {
-  clear: both;
   position: relative;
   width: 250px;
-  margin-top: 30px;
+  margin: 30px 0 20px 0;
   font-size: 11px;
   font-weight: bold;
   color: #fff;
@@ -261,7 +254,7 @@ export default {
 .x-legend {
   position: absolute;
   bottom: 12px;
-  right: -25px;
+  right: -5px;
 }
 </style>
 <!-- Not scoped to modify chart style -->
